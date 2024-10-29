@@ -11,8 +11,15 @@ class ProductController{
     public function index(){
         $products = $this->productModel->getAllProducts();
         require_once '../app/view/product/index.php';
+    }
 
-        echo 'index';
+    public function create(){
+        require_once '../app/view/product/create.php';
+    }
+
+    public function store(){
+        $this->productModel->createProduct();
+        header("Location: /product");
     }
 }
 ?>

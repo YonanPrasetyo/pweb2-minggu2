@@ -8,6 +8,7 @@
 <body>
     <h1>Daftar Produk</h1>
 
+    <a href="/product/create">Tambah Product</a>
     <table border="1">
         <thead>
             <tr>

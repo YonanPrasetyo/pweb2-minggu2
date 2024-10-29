@@ -22,19 +22,20 @@ class Penjualan extends Database
 
     public function getPenjualanById($id)
     {
-        $query = $this->conn->query("SELECT * FROM penjualanproduk WHERE ID_Penjualan = $id");
+        $query = $this->conn->query("SELECT * FROM penjualanproduk WHERE ID_Penjualan = '$id'");
         return $query->fetch(PDO::FETCH_ASSOC);
     }
 
-    public function updatePenjualan($id)
+    public function updatePenjualan()
     {
-        $query = $this->conn->query("UPDATE penjualanproduk SET Pembeli = '$_POST[Pembeli]', ID_Produk = '$_POST[ID_Produk]' WHERE ID_Penjualan = $id");
+        $query = $this->conn->query("UPDATE penjualanproduk SET Pembeli='$_POST[Pembeli]', ID_Produk='$_POST[ID_Produk]' WHERE ID_Penjualan='$_POST[ID_Penjualan]'");
         return $query;
     }
 
+
     public function deletePenjualan($id)
     {
-        $query = $this->conn->query("DELETE FROM penjualanproduk WHERE ID_Penjualan = $id");
+        $query = $this->conn->query("DELETE FROM penjualanproduk WHERE ID_Penjualan = '$id'");
         return $query;
     }
 

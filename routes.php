@@ -20,8 +20,12 @@ if ($url == '/penjualan/index') {
     $controller->create();
 }elseif ($url == '/penjualan/store') {
     $controller->store();
-}elseif ($url == '/penjualan/edit/:id') {
-    $controller->edit($_GET['id']);
+}elseif (preg_match('/\/penjualan\/edit\/(\d+)/', $url,$matches)) {
+    $id = $matches[1];
+    $controller->edit($id);
 }elseif ($url == '/penjualan/update') {
     $controller->update();
+}elseif (preg_match('/\/penjualan\/delete\/(\d+)/', $url,$matches)) {
+    $id = $matches[1];
+    $controller->delete($id);
 }

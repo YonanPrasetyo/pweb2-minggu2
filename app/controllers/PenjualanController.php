@@ -22,15 +22,12 @@ class PenjualanController{
         header("Location: /penjualan/index");
     }
     public function edit($id){
-        // $penjualan = $this->penjualanModel->getPenjualanById($id);
-        // print_r($penjualan);
-        // echo "$id";
-        echo "hiiiii";
+        $penjualan = $this->penjualanModel->getPenjualanById($id);
         require_once '../app/view/penjualan/edit.php';
     }
 
-    public function update($id){
-        $this->penjualanModel->updatePenjualan($id);
+    public function update(){
+        $this->penjualanModel->updatePenjualan();
         header("Location: /penjualan/index");
     }
 

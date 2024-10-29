@@ -31,5 +31,11 @@ class Product extends Database
         $query = $this->conn->query("UPDATE dataproduk SET Nama='$_POST[Nama]', Deskripsi='$_POST[Deskripsi]', Harga='$_POST[Harga]', ID_kategori='$_POST[ID_kategori]' WHERE ID_Produk='$_POST[ID_Produk]'");
         return $query;
     }
+
+    public function deleteProduct($id)
+    {
+        $query = $this->conn->query("DELETE FROM dataproduk WHERE ID_Produk = '$id'");
+        return $query;
+    }
 }
 ?>

@@ -31,5 +31,10 @@ class ProductController{
         $this->productModel->updateProduct();
         header("Location: /product");
     }
+
+    public function delete($id){
+        $this->productModel->deleteProduct($id);
+        header("Location: /product");
+    }
 }
 ?>

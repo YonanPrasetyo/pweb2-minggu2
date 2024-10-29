@@ -1,5 +1,5 @@
 <?php
-class database {
+class Database {
     private $host = 'localhost';
     private $db_name = 'manajemenproduk';
     private $username = 'root';
@@ -16,3 +16,4 @@ class database {
         }
     }
 }
+?>

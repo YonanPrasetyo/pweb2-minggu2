@@ -29,7 +29,7 @@
                     <td><?= $product['Harga']; ?></td>
                     <td><?= $product['ID_kategori']; ?></td>
                     <td>
-                        <a href="/product/edit/edit?id=<?= $product['ID_Produk']; ?>">Edit</a>
+                        <a href="/product/edit/<?= $product['ID_Produk']; ?>">Edit</a>
                         <a href="/product/delete/<?= $product['ID_Produk']; ?>">Delete</a>
                     </td>
                 </tr>

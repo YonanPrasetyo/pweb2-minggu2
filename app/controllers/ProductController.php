@@ -21,5 +21,15 @@ class ProductController{
         $this->productModel->createProduct();
         header("Location: /product");
     }
+
+    public function edit($id){
+        $product = $this->productModel->getProductById($id);
+        require_once '../app/view/product/edit.php';
+    }
+
+    public function update(){
+        $this->productModel->updateProduct();
+        header("Location: /product");
+    }
 }
 ?>

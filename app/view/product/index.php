@@ -17,6 +17,7 @@
                 <th>Deskripsi</th>
                 <th>Harga</th>
                 <th>Kategori</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
@@ -27,6 +28,10 @@
                     <td><?= $product['Deskripsi']; ?></td>
                     <td><?= $product['Harga']; ?></td>
                     <td><?= $product['ID_kategori']; ?></td>
+                    <td>
+                        <a href="/product/edit/edit?id=<?= $product['ID_Produk']; ?>">Edit</a>
+                        <a href="/product/delete/<?= $product['ID_Produk']; ?>">Delete</a>
+                    </td>
                 </tr>
             <?php endforeach; ?>
         </tbody>

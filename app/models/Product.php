@@ -20,6 +20,16 @@ class Product extends Database
         return $query;
     }
 
+    public function getProductById($id)
+    {
+        $query = $this->conn->query("SELECT * FROM dataproduk WHERE ID_Produk = '$id'");
+        return $query->fetch(PDO::FETCH_ASSOC);
+    }
 
+    public function updateProduct()
+    {
+        $query = $this->conn->query("UPDATE dataproduk SET Nama='$_POST[Nama]', Deskripsi='$_POST[Deskripsi]', Harga='$_POST[Harga]', ID_kategori='$_POST[ID_kategori]' WHERE ID_Produk='$_POST[ID_Produk]'");
+        return $query;
+    }
 }
 ?>

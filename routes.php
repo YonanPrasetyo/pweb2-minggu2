@@ -13,4 +13,8 @@ if ($url == '/product/index' || $url == '/product') {
     $controller->create();
 } elseif ($url == '/product/store') {
     $controller->store();
+} elseif ($url == '/product/edit/:id') {
+    $controller->edit($_GET['id']);
+} elseif ($url == '/product/update') {
+    $controller->update();
 }

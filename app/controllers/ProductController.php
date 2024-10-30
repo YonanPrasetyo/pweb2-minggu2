@@ -1,11 +1,14 @@
 <?php 
 require_once '../app/models/Product.php';
+require_once '../app/models/Kategori.php';
 
 class ProductController{
     private $productModel;
+    private $kategoriModel;
 
     public function __construct(){
         $this->productModel = new Product();
+        $this->kategoriModel = new Kategori();
     }
 
     public function index(){
@@ -14,6 +17,7 @@ class ProductController{
     }
 
     public function create(){
+        $categories = $this->kategoriModel->getAllCategories();
         require_once '../app/view/product/create.php';
     }
 
@@ -24,6 +28,7 @@ class ProductController{
 
     public function edit($id){
         $product = $this->productModel->getProductById($id);
+        $categories = $this->kategoriModel->getAllCategories();
         require_once '../app/view/product/edit.php';
     }
 

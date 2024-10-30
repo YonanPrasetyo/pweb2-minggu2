@@ -31,10 +31,14 @@
         </label>
 
         <label for="ID_Kategori" class="form-label w-full mt-4">
-        <div class="label">
+            <div class="label">
                 <span class="label-text">Kategori Produk</span>
             </div>
-        <input type="text" name="ID_Kategori" value="<?= $product['ID_Kategori']; ?>" class="input input-bordered w-full">
+            <select name="ID_Kategori" class="input input-bordered w-full">
+                <?php foreach ($categories as $category) : ?>
+                    <option <?php if ($product['ID_Kategori'] == $category['ID_Kategori']) echo "selected"; ?> value="<?= $category['ID_Kategori']; ?>"><?= $category['Kategori_Produk']; ?></option>
+                <?php endforeach; ?>
+            </select>
         </label>
 
         <button type="submit" class="btn btn-success mt-4">Simpan</button>

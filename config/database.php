@@ -1,16 +1,18 @@
-<?php 
-
-class database{
-    private $host = "localhost";
-    private $user = "root";
-    private $pass = "";
-    private $db = "db_login";
+<?php
+class database {
+    private $host = 'mdi.my.id';
+    private $db_name = 'basdeat2_klp5';
+    private $username = 'basdeat2_usr5';
+    private $password = '&uD%b?8AqWl8(Z)kOl';
     protected $conn;
 
-
-    public function __construct(){
-        $this->conn = new mysqli($this->host, $this->user, $this->pass, $this->db);
+    public function __construct() {
+        $this->conn = null;
+        try {
+            $this->conn = new PDO("mysql:host=" . $this->host . ";dbname=" . $this->db_name, $this->username, $this->password);
+            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        } catch(PDOException $e) {
+            echo "Connection error: " . $e->getMessage();
+        }
     }
 }
-
-?>

@@ -4,10 +4,14 @@
 require_once 'app/controllers/KategoriController.php';
 require_once 'app/controllers/ProductController.php';
 require_once 'app/controllers/PenjualanController.php';
+require_once 'app/controllers/StockController.php';
+
+$url = $_SERVER['REQUEST_URI'];
 
 $controller1 = new ProductController();
 $controller2 = new KategoriController();
 $controller3 = new PenjualanController();
+$controller4 = new StockController();
 
 $url = $_SERVER['REQUEST_URI'];
 
@@ -53,4 +57,16 @@ if ($url == '/kategori/index' || $url == '/') {
 }elseif (preg_match('/\/penjualan\/delete\/(\d+)/', $url,$matches)) {
     $id = $matches[1];
     $controller3->delete($id);
+}elseif ($url == '/stock/index') {
+    $controller4->stock();
+}elseif ($url == '/stock/tambah') {
+    $controller4->tambah($_POST);
+}elseif (preg_match('/\/stock\/edit\/(\d+)/', $url,$matches)) {
+    $ID_Stock_Produk = $matches[1];
+    $controller4->edit($ID_Stock_Produk);
+}elseif ($url == '/stock/update') {
+    $controller4->update($_POST);
+}elseif (preg_match('/\/stock\/hapus\/(\d+)/', $url,$matches)) {
+    $ID_Stock_Produk = $matches[1];
+    $controller4->hapus($ID_Stock_Produk);
 }

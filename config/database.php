@@ -1,4 +1,5 @@
 <?php
+
 class database {
     private $host = 'mdi.my.id';
     private $db_name = 'basdeat2_klp5';
@@ -16,3 +17,4 @@ class database {
         }
     }
 }
+?>

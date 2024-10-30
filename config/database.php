@@ -1,9 +1,10 @@
 <?php
-class Database {
-    private $host = 'localhost';
-    private $db_name = 'manajemenproduk';
-    private $username = 'root';
-    private $password = '';
+
+class database {
+    private $host = 'mdi.my.id';
+    private $db_name = 'basdeat2_klp5';
+    private $username = 'basdeat2_usr5';
+    private $password = '&uD%b?8AqWl8(Z)kOl';
     protected $conn;
 
     public function __construct() {

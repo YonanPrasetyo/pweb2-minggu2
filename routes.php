@@ -3,9 +3,11 @@
 
 require_once 'app/controllers/KategoriController.php';
 require_once 'app/controllers/ProductController.php';
+require_once 'app/controllers/PenjualanController.php';
 
 $controller1 = new ProductController();
 $controller2 = new KategoriController();
+$controller3 = new PenjualanController();
 
 $url = $_SERVER['REQUEST_URI'];
 
@@ -37,4 +39,18 @@ if ($url == '/kategori/index' || $url == '/') {
 }elseif (preg_match('/\/product\/delete\/(\d+)/', $url,$matches)) {
     $id = $matches[1];
     $controller1->delete($id);
+}elseif ($url == '/penjualan/index') {
+    $controller3->index();
+}elseif ($url == '/penjualan/create') {
+    $controller3->create();
+}elseif ($url == '/penjualan/store') {
+    $controller3->store();
+}elseif (preg_match('/\/penjualan\/edit\/(\d+)/', $url,$matches)) {
+    $id = $matches[1];
+    $controller3->edit($id);
+}elseif ($url == '/penjualan/update') {
+    $controller3->update();
+}elseif (preg_match('/\/penjualan\/delete\/(\d+)/', $url,$matches)) {
+    $id = $matches[1];
+    $controller3->delete($id);
 }

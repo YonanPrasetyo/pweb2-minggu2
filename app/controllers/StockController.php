@@ -15,7 +15,7 @@ class StockController {
 
     public function tambah($data) {
         if (isset($data['submit'])) {
-            $this->model->tambah($data['ID_Stock_Produk'], $data['ID_Produk'], $data['Jumlah_Stock']);
+            $this->model->tambah($data['ID_Produk'], $data['Jumlah_Stock']);
             header("Location: /stock/index");
         }
         require '../app/view/stock/tambah.php';

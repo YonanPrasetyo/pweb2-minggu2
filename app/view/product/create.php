@@ -18,8 +18,8 @@
         <label for="Harga">Harga Produk</label>
         <input type="number" name="Harga">
 
-        <label for="ID_kategori">Kategori Produk</label>
-        <input type="text" name="ID_kategori">
+        <label for="ID_Kategori">Kategori Produk</label>
+        <input type="text" name="ID_Kategori">
 
         <button type="submit">Simpan</button>
     </form>

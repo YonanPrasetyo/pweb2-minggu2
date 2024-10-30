@@ -12,7 +12,6 @@
         <thead>
             <tr>
                 <th>NO</th>
-                <th>ID Pembeli</th>
                 <th>Pembeli</th>
                 <th>ID produk</th>
                 <th>Action</th>
@@ -22,7 +21,6 @@
             <?php $no=1; foreach ($penjualan as $row) : ?>
                 <tr>
                     <td><?= $no++; ?></td>
-                    <td><?= $row['ID_Penjualan']; ?></td>
                     <td><?= $row['Pembeli']; ?></td>
                     <td><?= $row['ID_Produk']; ?></td>
                     <td>

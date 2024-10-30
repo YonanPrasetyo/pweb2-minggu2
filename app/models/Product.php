@@ -16,7 +16,7 @@ class Product extends Database
 
     public function createProduct()
     {
-        $query = $this->conn->query("INSERT INTO dataproduk(Nama, Deskripsi, Harga, ID_kategori) VALUES ('$_POST[Nama]', '$_POST[Deskripsi]', '$_POST[Harga]', '$_POST[ID_kategori]')");
+        $query = $this->conn->query("INSERT INTO dataproduk(Nama, Deskripsi, Harga, ID_Kategori) VALUES ('$_POST[Nama]', '$_POST[Deskripsi]', '$_POST[Harga]', '$_POST[ID_Kategori]')");
         return $query;
     }
 
@@ -28,7 +28,7 @@ class Product extends Database
 
     public function updateProduct()
     {
-        $query = $this->conn->query("UPDATE dataproduk SET Nama='$_POST[Nama]', Deskripsi='$_POST[Deskripsi]', Harga='$_POST[Harga]', ID_kategori='$_POST[ID_kategori]' WHERE ID_Produk='$_POST[ID_Produk]'");
+        $query = $this->conn->query("UPDATE dataproduk SET Nama='$_POST[Nama]', Deskripsi='$_POST[Deskripsi]', Harga='$_POST[Harga]', ID_Kategori='$_POST[ID_Kategori]' WHERE ID_Produk='$_POST[ID_Produk]'");
         return $query;
     }
 

@@ -19,7 +19,7 @@ class ProductController{
 
     public function store(){
         $this->productModel->createProduct();
-        header("Location: /product");
+        header("Location: /product/index");
     }
 
     public function edit($id){
@@ -29,12 +29,12 @@ class ProductController{
 
     public function update(){
         $this->productModel->updateProduct();
-        header("Location: /product");
+        header("Location: /product/index");
     }
 
     public function delete($id){
         $this->productModel->deleteProduct($id);
-        header("Location: /product");
+        header("Location: /product/index");
     }
 }
 ?>

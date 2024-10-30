@@ -8,65 +8,65 @@ require_once 'app/controllers/StockController.php';
 
 $url = $_SERVER['REQUEST_URI'];
 
-$controller1 = new ProductController();
-$controller2 = new KategoriController();
-$controller3 = new PenjualanController();
-$controller4 = new StockController();
+$controllerKategori = new KategoriController();
+$controllerProduct = new ProductController();
+$controllerPenjualan = new PenjualanController();
+$controllerStock = new StockController();
 
 $url = $_SERVER['REQUEST_URI'];
 
-if ($url == '/kategori/index' || $url == '/') {
-    $controller2->index();
+if ($url == '/kategori/index') {
+    $controllerKategori->index();  
 }elseif ($url == '/kategori/create') {
-    $controller2->create();
+    $controllerKategori->create();
 }elseif ($url == '/kategori/store') {
-    $controller2->store();
+    $controllerKategori->store();
 }elseif (preg_match('/\/kategori\/edit\/(\d+)/', $url,$matches)) {
     $id = $matches[1];
-    $controller2->edit($id);
+    $controllerKategori->edit($id);
 }elseif ($url == '/kategori/update') {
-    $controller2->update();
+    $controllerKategori->update();
 }elseif (preg_match('/\/kategori\/delete\/(\d+)/', $url,$matches)) {
     $id = $matches[1];
-    $controller2->delete($id);
-}elseif ($url == '/product/index' || $url == '/product') {
-    $controller1->index();
+    $controllerKategori->delete($id);
+}elseif ($url == '/product/index') {
+    $controllerProduct->index();
 }elseif ($url == '/product/create') {
-    $controller1->create();
+    $controllerProduct->create();
 }elseif ($url == '/product/store') {
-    $controller1->store();
+    $controllerProduct->store();
 }elseif (preg_match('/\/product\/edit\/(\d+)/', $url,$matches)) {
     $id = $matches[1];
-    $controller1->edit($id);
+    $controllerProduct->edit($id);
 }elseif ($url == '/product/update') {
-    $controller1->update();
+    $controllerProduct->update();
 }elseif (preg_match('/\/product\/delete\/(\d+)/', $url,$matches)) {
     $id = $matches[1];
-    $controller1->delete($id);
+    $controllerProduct->delete($id);
 }elseif ($url == '/penjualan/index') {
-    $controller3->index();
+    $controllerPenjualan->index();
 }elseif ($url == '/penjualan/create') {
-    $controller3->create();
+    $controllerPenjualan->create();
 }elseif ($url == '/penjualan/store') {
-    $controller3->store();
+    $controllerPenjualan->store();
 }elseif (preg_match('/\/penjualan\/edit\/(\d+)/', $url,$matches)) {
     $id = $matches[1];
-    $controller3->edit($id);
+    $controllerPenjualan->edit($id);
 }elseif ($url == '/penjualan/update') {
-    $controller3->update();
+    $controllerPenjualan->update();
 }elseif (preg_match('/\/penjualan\/delete\/(\d+)/', $url,$matches)) {
     $id = $matches[1];
-    $controller3->delete($id);
+    $controllerPenjualan->delete($id);
 }elseif ($url == '/stock/index') {
-    $controller4->stock();
+    $controllerStock->stock();
 }elseif ($url == '/stock/tambah') {
-    $controller4->tambah($_POST);
+    $controllerStock->tambah($_POST);
 }elseif (preg_match('/\/stock\/edit\/(\d+)/', $url,$matches)) {
     $ID_Stock_Produk = $matches[1];
-    $controller4->edit($ID_Stock_Produk);
+    $controllerStock->edit($ID_Stock_Produk);
 }elseif ($url == '/stock/update') {
-    $controller4->update($_POST);
+    $controllerStock->update($_POST);
 }elseif (preg_match('/\/stock\/hapus\/(\d+)/', $url,$matches)) {
     $ID_Stock_Produk = $matches[1];
-    $controller4->hapus($ID_Stock_Produk);
+    $controllerStock->hapus($ID_Stock_Produk);
 }

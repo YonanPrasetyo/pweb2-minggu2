@@ -21,8 +21,8 @@
         <label for="Harga">Harga Produk</label>
         <input type="number" name="Harga" value="<?= $product['Harga']; ?>">
 
-        <label for="ID_kategori">Kategori Produk</label>
-        <input type="text" name="ID_kategori" value="<?= $product['ID_kategori']; ?>">
+        <label for="ID_Kategori">Kategori Produk</label>
+        <input type="text" name="ID_Kategori" value="<?= $product['ID_Kategori']; ?>">
 
         <button type="submit">Simpan</button>
     </form>

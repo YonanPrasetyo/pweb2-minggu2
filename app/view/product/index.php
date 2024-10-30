@@ -27,7 +27,7 @@
                     <td><?= $product['Nama']; ?></td>
                     <td><?= $product['Deskripsi']; ?></td>
                     <td><?= $product['Harga']; ?></td>
-                    <td><?= $product['ID_kategori']; ?></td>
+                    <td><?= $product['ID_Kategori']; ?></td>
                     <td>
                         <a href="/product/edit/<?= $product['ID_Produk']; ?>">Edit</a>
                         <a href="/product/delete/<?= $product['ID_Produk']; ?>">Delete</a>

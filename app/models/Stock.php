@@ -8,9 +8,9 @@ class Stock extends Database {
         parent::__construct();
     }
 
-    public function tambah($ID_Stock_Produk, $ID_Produk, $Jumlah_Stock) {
-        $query = "INSERT INTO stockproduk (ID_Stock_Produk, ID_Produk, Jumlah_Stock) 
-                  VALUES ('$ID_Stock_Produk', '$ID_Produk', '$Jumlah_Stock')";
+    public function tambah($ID_Produk, $Jumlah_Stock) {
+        $query = "INSERT INTO stockproduk (ID_Produk, Jumlah_Stock) 
+                  VALUES ('$ID_Produk', '$Jumlah_Stock')";
         return $this->conn->exec($query);
     }
 

@@ -23,18 +23,14 @@
                 <td><?= $stock['ID_Produk'] ?></td>
                 <td><?= $stock['Jumlah_Stock'] ?></td>
                 <td>
-                    <a href="index.php?action=show&id=<?= $stock['ID_Stock_Produk'] ?>" class="btn btn-info btn-sm">View</a>
-                    <a href="update.php?action=edit&id=<?= $stock['ID_Stock_Produk'] ?>" class="btn btn-warning btn-sm">Edit</a>
-                    <a href="index.php?action=delete&id=<?= $stock['ID_Stock_Produk'] ?>" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</a>
+                    <a href="/stock/tampil<?= $stock['ID_Stock_Produk'] ?>" class="btn btn-info btn-sm">View</a>
+                    <a href="/stock/edit/<?= $stock['ID_Stock_Produk'] ?>" class="btn btn-warning btn-sm">Update</a>
+                    <a href="/stock/hapus/<?= $stock['ID_Stock_Produk']; ?>" class="btn btn-danger btn-sm">Delete</a>
                 </td>
             </tr>
             <?php endforeach; ?>
         </tbody>
     </table>
 </div>
-
-
-
-
 </body>
 </html>

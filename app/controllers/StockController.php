@@ -8,10 +8,9 @@ class StockController {
         $this->model = new Stock();
     }
 
-
     public function stock() {
         $stocks = $this->model->readAll();
-        require '../app/view/stock/stock.php';
+        require '../app/view/stock/index.php';
     }
 
     public function tambah($data) {
@@ -22,23 +21,24 @@ class StockController {
         require '../app/view/stock/tambah.php';
     }
 
-    public function update($ID_Stock_Produk, $data) {
-        $product = $this->model->readOne($id);
-        if (isset($data['submit'])) {
-            $this->model->update($ID_Stock_Produk, $data['ID_Stock_Produk'], $data['Jumlah_Stock']);
-            header("Location: stock.php");
-        }
-        require 'views/stock/update.php';
+    public function edit($ID_Stock_Produk) {
+        $stock = $this->model->readOne($ID_Stock_Produk);
+        require '../app/view/stock/update.php';
+    }
+
+    public function update($data) {
+            $this->model->update($data['ID_Stock_Produk'], $data['ID_Produk'], $data['Jumlah_Stock']);
+            header("Location: /stock/index");
     }
 
     public function hapus($ID_Stock_Produk) {
-        $this->model->delete($ID_Stock_Produk);
-        header("Location: stock.php");
+        $this->model->hapus($ID_Stock_Produk);
+        header("Location: /stock/index");
     }
 
     public function tampil($ID_Stock_Produk) {
-        $product = $this->model->readOne($ID_Stock_Produk);
-        require 'views/stock.php';
+        $stock = $this->model->readOne($ID_Stock_Produk);
+        require '../app/view/stock/index.php';
     }
 }
 ?>

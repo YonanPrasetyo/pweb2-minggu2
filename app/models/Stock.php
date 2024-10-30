@@ -28,13 +28,13 @@ class Stock extends Database {
 
     public function update($ID_Stock_Produk, $ID_Produk, $Jumlah_Stock) {
         $query = "UPDATE stockproduk
-                  SET ID_Stock_Produk = '$ID_Stock_Produk', ID_Produk = '$ID_Produk', Jumlah_Stock = '$Jumlah_Stock' 
+                  SET ID_Produk = '$ID_Produk', Jumlah_Stock = '$Jumlah_Stock' 
                   WHERE ID_Stock_Produk = '$ID_Stock_Produk'";
         return $this->conn->exec($query);
     }
 
-    public function hapus($id) {
-        $query = "DELETE FROM stockproduk WHERE ID_Stock_Produk = '$ID_Stock_Produk'";
+    public function hapus($ID_Stock_Produk) {
+        $query = "DELETE FROM stockproduk WHERE ID_Stock_Produk = $ID_Stock_Produk";
         return $this->conn->exec($query);
     }
 }

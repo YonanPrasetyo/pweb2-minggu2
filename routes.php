@@ -8,10 +8,6 @@ $controller = new ProductController();
 
 $url = $_SERVER['REQUEST_URI'];
 
-// if ($url == '/user/index' || $url == '/') {
-//     $controller->index();
-// }
-
 $controller = new PenjualanController();
 
 if ($url == '/penjualan/index') {

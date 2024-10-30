@@ -9,6 +9,8 @@
     <h1>Edit Penjualan</h1>
 
     <form method="POST" action="/penjualan/update">
+    <input type="hidden" name="ID_Penjualan" value="<?= $penjualan['ID_Penjualan']; ?>">
+
     <label for="Pembeli">Pembeli:</label>
     <input type="text" name="Pembeli" value="<?= $penjualan['Pembeli']; ?>">
 

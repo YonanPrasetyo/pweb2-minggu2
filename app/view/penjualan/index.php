@@ -26,7 +26,7 @@
                     <td><?= $row['Pembeli']; ?></td>
                     <td><?= $row['ID_Produk']; ?></td>
                     <td>
-                        <a href="/penjualan/edit/edit?id=<?= $row['ID_Penjualan']; ?>">Edit</a>
+                        <a href="/penjualan/edit/<?= $row['ID_Penjualan']; ?>">Edit</a>
                         <a href="/penjualan/delete/<?= $row['ID_Penjualan']; ?>">Delete</a>
                     </td>
                 </tr>

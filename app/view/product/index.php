@@ -8,6 +8,7 @@
 <body>
     <h1>Daftar Produk</h1>
 
+    <a href="/product/create">Tambah Product</a>
     <table border="1">
         <thead>
             <tr>
@@ -16,6 +17,7 @@
                 <th>Deskripsi</th>
                 <th>Harga</th>
                 <th>Kategori</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
@@ -25,7 +27,11 @@
                     <td><?= $product['Nama']; ?></td>
                     <td><?= $product['Deskripsi']; ?></td>
                     <td><?= $product['Harga']; ?></td>
-                    <td><?= $product['Kategori_Produk']; ?></td>
+                    <td><?= $product['ID_kategori']; ?></td>
+                    <td>
+                        <a href="/product/edit/<?= $product['ID_Produk']; ?>">Edit</a>
+                        <a href="/product/delete/<?= $product['ID_Produk']; ?>">Delete</a>
+                    </td>
                 </tr>
             <?php endforeach; ?>
         </tbody>

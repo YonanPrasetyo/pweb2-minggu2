@@ -1,20 +1,27 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form Tambah Kategori</title>
+    <title>Form Tambah Produk</title>
 </head>
 <body>
-    <h1>Tambah Kategori</h1>
+    <h1>Tambah Produk</h1>
 
-    <form method="POST" action="/kategori/store">
-        <label for="nama_kategori">Nama Kategori:</label>
-        <input type="text" name="nama_kategori" required>
+    <form method="POST" action="/product/store">
+        <label for="Nama">Nama Produk:</label>
+        <input type="text" name="Nama">
+
+        <label for="Deskripsi">Deskripsi Produk</label>
+        <input type="text" name="Deskripsi">
+
+        <label for="Harga">Harga Produk</label>
+        <input type="number" name="Harga">
+
+        <label for="ID_kategori">Kategori Produk</label>
+        <input type="text" name="ID_kategori">
 
         <button type="submit">Simpan</button>
     </form>
-
-    <a href="/kategori">Kembali ke Daftar Kategori</a>
 </body>
 </html>

@@ -1,22 +1,30 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form Edit Kategori</title>
+    <title>Form Edit Pruduk</title>
 </head>
 <body>
-    <h1>Edit Kategori</h1>
+    <h1>Edit Produk</h1>
 
-    <form method="POST" action="/kategori/update">
-        <input type="hidden" name="ID_Kategori" value="<?= $kategori['ID_Kategori']; ?>">
+    <form method="POST" action="/product/update">
+            
+        <input type="hidden" name="ID_Produk" value="<?= $product['ID_Produk']; ?>">
 
-        <label for="Kategori_Produk">Nama Kategori:</label>
-        <input type="text" name="Kategori_Produk" value="<?= $kategori['Kategori_Produk']; ?>" required>
+        <label for="Nama">Nama Produk:</label>
+        <input type="text" name="Nama" value="<?= $product['Nama']; ?>">
+
+        <label for="Deskripsi">Deskripsi Produk</label>
+        <input type="text" name="Deskripsi" value="<?= $product['Deskripsi']; ?>">
+
+        <label for="Harga">Harga Produk</label>
+        <input type="number" name="Harga" value="<?= $product['Harga']; ?>">
+
+        <label for="ID_kategori">Kategori Produk</label>
+        <input type="text" name="ID_kategori" value="<?= $product['ID_kategori']; ?>">
 
         <button type="submit">Simpan</button>
     </form>
-
-    <a href="/kategori">Kembali ke Daftar Kategori</a>
 </body>
 </html>

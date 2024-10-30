@@ -10,7 +10,7 @@ class Penjualan extends Database
 
     public function getAllPenjualan()
     {
-        $query = $this->conn->query("SELECT * FROM penjualanproduk");
+        $query = $this->conn->query("SELECT * FROM penjualanproduk JOIN dataproduk ON penjualanproduk.ID_Produk = dataproduk.ID_Produk");
         return $query->fetchAll(PDO::FETCH_ASSOC);
     }
 

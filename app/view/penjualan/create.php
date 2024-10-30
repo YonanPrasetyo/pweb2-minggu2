@@ -1,21 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form Tambah Penjualan</title>
-</head>
-<body>
-    <h1>Tambah Penjualan</h1>
+<?php include_once "../app/view/src/top.php" ?>
+<?php include_once "../app/view/src/sidebar.php" ?>
 
-    <form method="POST" action="/penjualan/store">
-        <label for="Pembeli">Pembeli</label>
-        <input type="text" name="Pembeli">
+<div class="container p-10">
+    <h1 class="text-2xl pb-6 font-bold">Tambah Penjualan</h1>
 
-        <label for="ID_Produk">ID Produk</label>
-        <input type="number" name="ID_Produk">
+    <form method="POST" action="/penjualan/store" class="form-control w-full">
+        <label for="Pembeli">
+            <div class="label">
+                <span class="label-text">Pembeli</span>
+            </div>
+            <input type="text" name="Pembeli" class="input input-bordered w-full">
+        </label>
 
-        <button type="submit">Simpan</button>
+        <label for="ID_Produk" class="form-label w-full mt-4">
+            <div class="label">
+                <span class="label-text">ID Produk</span>
+            </div>
+            <input type="number" name="ID_Produk" class="input input-bordered w-full">
+        </label>
+
+        <button type="submit" class="btn btn-success mt-4">Simpan</button>
     </form>
-</body>
-</html>
+
+</div>
+<?php include_once "../app/view/src/bottom.php" ?>

@@ -10,7 +10,7 @@ class Product extends Database
 
     public function getAllProducts()
     {
-        $query = $this->conn->query("SELECT * FROM dataproduk");
+        $query = $this->conn->query("SELECT * FROM dataproduk JOIN kategoriproduk ON dataproduk.ID_Kategori = kategoriproduk.ID_Kategori");
         return $query->fetchAll(PDO::FETCH_ASSOC);
     }
 

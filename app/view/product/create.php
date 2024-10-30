@@ -1,27 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form Tambah Produk</title>
-</head>
-<body>
-    <h1>Tambah Produk</h1>
+<?php include_once "../app/view/src/top.php" ?>
+<?php include_once "../app/view/src/sidebar.php" ?>
 
-    <form method="POST" action="/product/store">
-        <label for="Nama">Nama Produk:</label>
-        <input type="text" name="Nama">
+<div class="container p-10">
+    
+    <h1 class="text-2xl pb-6 font-bold">Tambah Produk</h1>
 
-        <label for="Deskripsi">Deskripsi Produk</label>
-        <input type="text" name="Deskripsi">
+    <form method="POST" action="/product/store" class="form-control w-full">
 
-        <label for="Harga">Harga Produk</label>
-        <input type="number" name="Harga">
+        <label for="Nama" class="form-label w-full mt-4">
+            <div class="label">
+                <span class="label-text">Masukan Nama Produk</span>
+            </div>
+            <input type="text" name="Nama" class="input input-bordered w-full">
+        </label>
+        
+        <label for="Deskripsi" class="form-label w-full mt-4">
+            <div class="label">
+                <span class="label-text">Deskripsi Produk</span>
+            </div>
+            <input type="text" name="Deskripsi" class="input input-bordered w-full">
+        </label>
 
-        <label for="ID_Kategori">Kategori Produk</label>
-        <input type="text" name="ID_Kategori">
+        <label for="Harga" class="form-label w-full mt-4">
+            <div class="label">
+                <span class="label-text" class="label-text">Harga</span>
+            </div>
+            <input type="number" name="Harga" class="input input-bordered w-full">
+        </label>
 
-        <button type="submit">Simpan</button>
+        <label for="ID_Kategori" class="form-label w-full mt-4">
+            <div class="label">
+                <span class="label-text" class="label-text">Kategori Produk</span>
+            </div>
+            <input type="text" name="ID_Kategori" class="input input-bordered w-full">
+        </label>
+
+        <button type="submit" class="btn btn-success mt-4">Simpan</button>
     </form>
-</body>
-</html>
+</div>
+
+<?php include_once "../app/view/src/bottom.php" ?>

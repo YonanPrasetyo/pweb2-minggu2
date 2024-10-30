@@ -15,7 +15,7 @@ class Stock extends Database {
     }
 
     public function readAll() {
-        $query = "SELECT * FROM stockproduk";
+        $query = "SELECT * FROM stockproduk JOIN dataproduk ON stockproduk.ID_Produk = dataproduk.ID_Produk";
         $stock = $this->conn->query($query);
         return $stock->fetchAll(PDO::FETCH_ASSOC);
     }

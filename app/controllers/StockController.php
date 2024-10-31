@@ -23,7 +23,10 @@ class StockController {
     
     public function simpan($data){
         $this->model->tambah($data['ID_Produk'], $data['Jumlah_Stock']);
-        $_SESSION['flash_message'] = "Data Stok telah ditambahkan";
+        $_SESSION['flash_message'] = [
+            'pesan' => "Data Stok telah ditambahkan", 
+            'color' => "Hijau"
+        ];
         header("Location: /stock/index");
 
     }
@@ -36,13 +39,19 @@ class StockController {
 
     public function update($data) {
             $this->model->update($data['ID_Stock_Produk'], $data['ID_Produk'], $data['Jumlah_Stock']);
-            $_SESSION['flash_message'] = "Data Berhasil diperbarui";
+            $_SESSION['flash_message'] = [
+                'pesan' => "Data Stok telah diperbarui", 
+                'color' => "Hijau"
+            ];
             header("Location: /stock/index");
     }
 
     public function hapus($ID_Stock_Produk) {
         $this->model->hapus($ID_Stock_Produk);
-        $_SESSION['flash_message'] = "Data Berhasil Dihapus";   
+        $_SESSION['flash_message'] = [
+            'pesan' => "Data Stok telah dihapus", 
+            'color' => "Hijau"
+        ];
         header("Location: /stock/index");
     }
 

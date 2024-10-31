@@ -2,9 +2,11 @@
 
 <script>
     // Fungsi untuk menampilkan alert konfirmasi hapus
-    function showAlert() {
+    function showAlert($id) {
         const deleteAlert = document.getElementById('deleteAlert');
         deleteAlert.classList.remove('hidden');
+        const deleteBtn = document.getElementById('deleteBtn');
+        deleteBtn.setAttribute('href', $id);
     }
 
     // Fungsi untuk menutup alert konfirmasi hapus

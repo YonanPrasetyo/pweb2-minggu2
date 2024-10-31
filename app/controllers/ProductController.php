@@ -23,14 +23,20 @@ class ProductController{
 
     public function store(){
         $this->productModel->createProduct();
-        $_SESSION['flash_message'] = "Data produk baru telah ditambahkan";
+        $_SESSION['flash_message'] = [
+            'pesan' => "Data Produk baru telah ditambahkan", 
+            'color' => "Hijau"
+        ];
         header("Location: /product/index");
         exit;
     }
 
     public function edit($id){
         $product = $this->productModel->getProductById($id);
-        $_SESSION['flash_message'] = "Data Produk ".$product['Nama']." telah diperbarui";
+        $_SESSION['flash_message'] = [
+            'pesan' => "Data Produk ".$product['Nama']." telah diperbarui", 
+            'color' => "Hijau"
+        ];
         $categories = $this->kategoriModel->getAllCategories();
         require_once '../app/view/product/edit.php';
     }
@@ -44,6 +50,10 @@ class ProductController{
         $product = $this->productModel->getProductById($id);
         $this->productModel->deleteProduct($id);
         $_SESSION['flash_message'] = "Data produk ".$product['Nama']." telah dihapus";
+        $_SESSION['flash_message'] = [
+            'pesan' => "Data Produk ".$product['Nama']." telah dihapus", 
+            'color' => "Hijau"
+        ];
         header("Location: /product/index");
     }
 }

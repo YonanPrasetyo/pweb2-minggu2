@@ -25,7 +25,7 @@
                                 <div>Rp. <?= $product['Harga']; ?></div>
                                 <div>
                                     <a href="/product/edit/<?= $product['ID_Produk']; ?>" class="btn btn-outline btn-warning">Edit</a>
-                                    <a href="javascript:void(0)" onclick="showAlert()" class="btn btn-outline btn-error ">Hapus</a>
+                                    <a href="javascript:void(0)" onclick="showAlert(<?= $product['ID_Produk']; ?>)" class="btn btn-outline btn-error ">Hapus</a>
                                 </div>
                             </div>
                         </div>
@@ -42,7 +42,7 @@
         <div class="flex flex-col">
             <span>Apakaah Anda yakin ingin menghapus data ini?</span>
                 <div class="flex gap-4 mt-4 justify-center">
-                    <a href="/product/delete/<?= $product['ID_Produk']; ?>" class="btn btn-error">Hapus</a>
+                    <a id="confirmDeleteBtn" href="#" class="btn btn-error">Hapus</a>
                     <a onclick="closeAlert()" class="btn btn-success">Batal</a>
                 </div>
             </div>
@@ -50,6 +50,21 @@
     </div>
 <!-- alert end -->
 
-<?php include_once "../app/view/src/alert.php" ?>
+
+<script>
+    // Fungsi untuk menampilkan alert konfirmasi hapus
+    function showAlert($id) {
+        const deleteAlert = document.getElementById('deleteAlert');
+        deleteAlert.classList.remove('hidden');
+        const confirmDeleteBtn = document.getElementById('confirmDeleteBtn');
+        confirmDeleteBtn.setAttribute('href', '/product/delete/' + $id);
+    }
+
+    // Fungsi untuk menutup alert konfirmasi hapus
+    function closeAlert() {
+        const deleteAlert = document.getElementById('deleteAlert');
+        deleteAlert.classList.add('hidden');
+    }
+</script>
 
 <?php include_once "../app/view/src/bottom.php" ?>

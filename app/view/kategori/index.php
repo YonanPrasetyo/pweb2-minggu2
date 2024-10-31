@@ -21,7 +21,7 @@
                         <td><p class="badge font-semibold badge-primary badge-outline"><?= $row['Kategori_Produk'] ?></p></td>
                         <td>
                             <a href="/kategori/edit/<?= $row['ID_Kategori'] ?>" class="btn btn-outline btn-warning">Edit</a>
-                            <a href="javascript:void(0)" onclick="showAlert()" class="btn btn-outline btn-error">Hapus</a>
+                            <a href="javascript:void(0)" onclick="showAlert(<?= $row['ID_Kategori'] ?>)" class="btn btn-outline btn-error">Hapus</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>
@@ -36,7 +36,7 @@
         <div class="flex flex-col">
             <span>Apakaah Anda yakin ingin menghapus data ini?</span>
                 <div class="flex gap-4 mt-4 justify-center">
-                    <a href="/kategori/delete/<?= $row['ID_Kategori'] ?>" class="btn btn-error">Hapus</a>
+                    <a id="confirmDeleteBtn" href="#" class="btn btn-error">Hapus</a>
                     <a onclick="closeAlert()" class="btn btn-success">Batal</a>
                 </div>
             </div>
@@ -44,5 +44,21 @@
     </div>
 <!-- alert end -->
 
-<?php include_once "../app/view/src/alert.php" ?>
+
+<script>
+    // Fungsi untuk menampilkan alert konfirmasi hapus
+    function showAlert($id) {
+        const deleteAlert = document.getElementById('deleteAlert');
+        deleteAlert.classList.remove('hidden');
+        const confirmDeleteBtn = document.getElementById('confirmDeleteBtn');
+        confirmDeleteBtn.setAttribute('href', '/kategori/delete/' + $id);
+    }
+
+    // Fungsi untuk menutup alert konfirmasi hapus
+    function closeAlert() {
+        const deleteAlert = document.getElementById('deleteAlert');
+        deleteAlert.classList.add('hidden');
+    }
+</script>
+
 <?php include_once "../app/view/src/bottom.php" ?>

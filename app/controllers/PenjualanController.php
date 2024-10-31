@@ -21,7 +21,10 @@ class PenjualanController{
 
     public function store(){
         $this->penjualanModel->createPenjualan();
-        $_SESSION['flash_message'] = "Data penjualan baru telah ditambahkan";
+        $_SESSION['flash_message'] = [
+            'pesan' => "Data penjualan baru telah ditambahkan",
+            'color' => "Hijau"
+        ];
         header("Location: /penjualan/index");
     }
     public function edit($id){
@@ -32,13 +35,19 @@ class PenjualanController{
 
     public function update(){
         $this->penjualanModel->updatePenjualan();
-        $_SESSION['flash_message'] = "Data Berhasil diperbarui";
+        $_SESSION['flash_message'] = [
+            'pesan' => "Data penjualan berasil diperbarui",
+            'color' => "Hijau"
+        ];
         header("Location: /penjualan/index");
     }
 
     public function delete($id){
         $this->penjualanModel->deletePenjualan($id);
-        $_SESSION['flash_message'] = "Data Berhasil Dihapus";
+        $_SESSION['flash_message'] = [
+            'pesan' => "Data Berhasil Dihapus",
+            'color' => "Hijau"
+        ];
         header("Location: /penjualan/index");
     }
 }

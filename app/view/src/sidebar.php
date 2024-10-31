@@ -15,7 +15,7 @@
             <li><a href="/stock/index" class="flex items-center"><i class="fas fa-question-circle mr-3"></i> Stock</a></li>
             </ul>
         </div>
-        <div>p</div>
+        <div>Manajemen Produk</div>
     </div>
 
   </aside>

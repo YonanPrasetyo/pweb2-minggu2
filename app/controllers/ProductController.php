@@ -1,6 +1,4 @@
 <?php 
-session_start();
-
 require_once '../app/models/Product.php';
 require_once '../app/models/Kategori.php';
 

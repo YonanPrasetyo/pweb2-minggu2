@@ -23,6 +23,7 @@ class KategoriController {
     public function store() {
         if (isset($_POST['Kategori_Produk'])) {
             $this->kategoriModel->createCategory($_POST['Kategori_Produk']);
+            $_SESSION['flash_message'] = "Data Kategori baru telah ditambahkan";
             header("Location: /kategori/index");
             exit();
         }
@@ -35,6 +36,7 @@ class KategoriController {
 
     public function update() {
             $this->kategoriModel->updateCategory($_POST['ID_Kategori'], $_POST['Kategori_Produk']);
+            $_SESSION['flash_message'] = "Data Berhasil diperbarui";
             header("Location: /kategori/index");
     }
 
@@ -44,6 +46,7 @@ class KategoriController {
             $pesan = "Kategori ini masih digunakan pada salah satu produk. Kategori tidak bisa dihapus.";
         }else{
             $this->kategoriModel->deleteCategory($id);
+            $_SESSION['flash_message'] = "Data Berhasil Dihapus";
             header("Location: /kategori/index");
             exit();
         }

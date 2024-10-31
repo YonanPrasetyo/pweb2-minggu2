@@ -21,6 +21,7 @@ class PenjualanController{
 
     public function store(){
         $this->penjualanModel->createPenjualan();
+        $_SESSION['flash_message'] = "Data penjualan baru telah ditambahkan";
         header("Location: /penjualan/index");
     }
     public function edit($id){
@@ -31,11 +32,13 @@ class PenjualanController{
 
     public function update(){
         $this->penjualanModel->updatePenjualan();
+        $_SESSION['flash_message'] = "Data Berhasil diperbarui";
         header("Location: /penjualan/index");
     }
 
     public function delete($id){
         $this->penjualanModel->deletePenjualan($id);
+        $_SESSION['flash_message'] = "Data Berhasil Dihapus";
         header("Location: /penjualan/index");
     }
 }

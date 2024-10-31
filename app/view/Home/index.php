@@ -16,19 +16,19 @@
         <div class="card w-32 bg-blue-100 shadow-lg p-4 rounded-lg shadow-lg shadow-blue-500/50">
             <div class="text-center text-xl font-bold text-gray-700"><?= $jumlahkategori; ?></div>
             <div class="text-center text-2xl text-gray-500">KATEGORI</div>
-            <a href="/product/index" class="btn btn-primary mt-4">Lihat Detail</a>
+            <a href="/kategori/index" class="btn btn-primary mt-4">Lihat Detail</a>
         </div>
         
         <div class="card w-32 bg-blue-100 shadow-lg p-4 rounded-lg shadow-lg shadow-blue-500/50">
             <div class="text-center text-xl font-bold text-gray-700"><?= $jumlahpenjualan; ?></div>
             <div class="text-center text-2xl text-gray-500">PENJUALAN</div>
-            <a href="/product/index" class="btn btn-primary mt-4">Lihat Detail</a>
+            <a href="/penjualan/index" class="btn btn-primary mt-4">Lihat Detail</a>
         </div>
 
         <div class="card w-32 bg-blue-100 shadow-lg p-4 rounded-lg shadow-lg shadow-blue-500/50">
             <div class="text-center text-xl font-bold text-gray-700"><?= $jumlahstock; ?></div>
             <div class="text-center text-2xl text-gray-500">STOCK</div>
-            <a href="/product/index" class="btn btn-primary mt-4">Lihat Detail</a>
+            <a href="/stock/index" class="btn btn-primary mt-4">Lihat Detail</a>
         </div>
 
     </div>

@@ -39,6 +39,9 @@ class Kategori extends Database
 
     public function deleteCategory($id)
     {
+        // cek apakah kateori yang akan dihapus masih digunakam pada salah satu / lebiih produk
+        // jika ada, tampilkan pesan kategori tidak bisa dihapus
+        
         $query = $this->conn->prepare("DELETE FROM kategoriproduk WHERE ID_Kategori = :id");
         $query->bindParam(':id', $id);
         return $query->execute();

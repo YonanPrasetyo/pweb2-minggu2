@@ -1,11 +1,14 @@
 <?php 
+require_once '../app/models/Product.php';
 require_once '../app/models/Kategori.php';
 
 class KategoriController {
     private $kategoriModel;
+    private $productModel;
 
     public function __construct() {
         $this->kategoriModel = new Kategori();
+        $this->productModel = new Product();
     }
 
     public function index() {
@@ -36,9 +39,14 @@ class KategoriController {
     }
 
     public function delete($id) {
-        $this->kategoriModel->deleteCategory($id);
-        header("Location: /kategori/index");
-        exit();
+        $product = $this->productModel->getProductsByCategory($id);
+        if (count($product) > 0) {
+            $pesan = "Kategori ini masih digunakan pada salah satu produk. Kategori tidak bisa dihapus.";
+        }else{
+            $this->kategoriModel->deleteCategory($id);
+            header("Location: /kategori/index");
+            exit();
+        }
     }
 }
 ?>

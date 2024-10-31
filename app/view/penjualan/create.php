@@ -24,6 +24,13 @@
             </select>
         </label>
 
+        <label for="Jumlah">
+            <div class="label">
+                <span class="label-text">Masukan Jumlah Barang</span>
+            </div>
+            <input type="text" name="Jumlah" class="input input-bordered w-full">
+        </label>
+
         <button type="submit" class="btn btn-success mt-4">Simpan</button>
     </form>
 

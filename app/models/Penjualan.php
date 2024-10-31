@@ -16,7 +16,8 @@ class Penjualan extends Database
 
     public function createPenjualan()
     {
-        $query = $this->conn->query("INSERT INTO penjualanproduk(Pembeli, ID_Produk) VALUES ('$_POST[Pembeli]', '$_POST[ID_Produk]')");
+        $query = $this->conn->query("   INSERT INTO penjualanproduk(Pembeli, Jumlah, Total_Harga, ID_Produk) 
+                                        VALUES ('$_POST[Pembeli]', '$_POST[Jumlah]', '$_POST[Total_Harga]', '$_POST[ID_Produk]')");
         return $query;
     }
 
@@ -28,7 +29,7 @@ class Penjualan extends Database
 
     public function updatePenjualan()
     {
-        $query = $this->conn->query("UPDATE penjualanproduk SET Pembeli='$_POST[Pembeli]', ID_Produk='$_POST[ID_Produk]' WHERE ID_Penjualan='$_POST[ID_Penjualan]'");
+        $query = $this->conn->query("UPDATE penjualanproduk SET Pembeli='$_POST[Pembeli]', Jumlah='$_POST[Jumlah]', Total_Harga='$_POST[Total_Harga]', ID_Produk='$_POST[ID_Produk]' WHERE ID_Penjualan='$_POST[ID_Penjualan]'");
         return $query;
     }
 

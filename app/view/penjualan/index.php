@@ -12,6 +12,8 @@
                     <th>NO</th>
                     <th>Pembeli</th>
                     <th>Nama Produk</th>
+                    <th>Jumlah</th>
+                    <th>Harga Total</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -21,6 +23,8 @@
                         <td><?= $no++; ?></td>
                         <td><?= $row['Pembeli']; ?></td>
                         <td><?= $row['Nama']; ?></td>
+                        <td><?= $row['Jumlah']; ?></td>
+                        <td><?= $row['Total_Harga']; ?></td>
                         <td>
                             <a href="/penjualan/edit/<?= $row['ID_Penjualan']; ?>" class="btn btn-outline btn-warning">Edit</a>
                             <a href="javascript:void(0)" onclick="showAlert(<?= $row['ID_Penjualan']; ?>)" class="btn btn-outline btn-error">Hapus</a>

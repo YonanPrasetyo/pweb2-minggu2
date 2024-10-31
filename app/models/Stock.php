@@ -54,5 +54,10 @@ class Stock extends Database {
         $query = $this->conn->query("SELECT * FROM stockproduk WHERE ID_Produk = '$id'");
         return $query->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    public function penguranganStock($id, $stock) {
+        $query = $this->conn->query("UPDATE stockproduk SET Jumlah_Stock = $stock WHERE ID_Produk = '$id'");
+        return $query;
+    }
 }
 ?>

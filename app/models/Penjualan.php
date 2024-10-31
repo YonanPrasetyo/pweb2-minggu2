@@ -39,5 +39,10 @@ class Penjualan extends Database
         return $query;
     }
 
+    public function getPenjualanByProduct($id)
+    {
+        $query = $this->conn->query("SELECT * FROM penjualanproduk WHERE ID_Produk = '$id'");
+        return $query->fetchAll(PDO::FETCH_ASSOC);
+    }
 }
 ?>

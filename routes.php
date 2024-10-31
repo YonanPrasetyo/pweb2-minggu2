@@ -71,4 +71,6 @@ if ($url == '/kategori/index') {
 }elseif (preg_match('/\/stock\/hapus\/(\d+)/', $url,$matches)) {
     $ID_Stock_Produk = $matches[1];
     $controllerStock->hapus($ID_Stock_Produk);
+}else {
+    echo '404 Not Found';
 }

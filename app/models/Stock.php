@@ -37,5 +37,10 @@ class Stock extends Database {
         $query = "DELETE FROM stockproduk WHERE ID_Stock_Produk = $ID_Stock_Produk";
         return $this->conn->exec($query);
     }
+
+    public function getStockByProduct($id) {
+        $query = $this->conn->query("SELECT * FROM stockproduk WHERE ID_Produk = '$id'");
+        return $query->fetchAll(PDO::FETCH_ASSOC);
+    }
 }
 ?>

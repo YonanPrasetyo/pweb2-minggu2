@@ -7,12 +7,16 @@
 
         
             <input type="hidden" name="ID_Stock_Produk" value="<?= $stock['ID_Stock_Produk'] ?>">
-        
-            <label class="form-label w-full mt-4">
+
+            <label for="ID_Produk" class="form-label w-full mt-4">
                 <div class="label">
-                    <span class="label-text">ID Produk:</span>
+                    <span class="label-text" class="label-text">Nama Produk</span>
                 </div>
-                <input type="number" name="ID_Produk" value="<?= $stock['ID_Produk'] ?>" class="input input-bordered w-full">
+                <select name="ID_Produk" class="input input-bordered w-full">
+                    <?php foreach ($products as $product) : ?>
+                        <option <?php if ($product['ID_Produk'] == $stock['ID_Produk']) echo "selected"; ?> value="<?= $product['ID_Produk']; ?>"><?= $product['Nama']; ?></option>
+                    <?php endforeach; ?>
+                </select>
             </label>
 
             <label>

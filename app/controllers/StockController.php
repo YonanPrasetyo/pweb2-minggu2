@@ -1,11 +1,14 @@
 <?php
 require_once '../app/models/Stock.php';
+require_once '../app/models/Product.php';
 
 class StockController {
     private $model;
+    private $productModel;
 
     public function __construct() {
         $this->model = new Stock();
+        $this->productModel = new Product();
     }
 
     public function stock() {
@@ -14,6 +17,7 @@ class StockController {
     }
 
     public function tambah() {
+        $products = $this->productModel->getAllProducts();
         require '../app/view/stock/tambah.php';
     }
     
@@ -25,6 +29,7 @@ class StockController {
 
     public function edit($ID_Stock_Produk) {
         $stock = $this->model->readOne($ID_Stock_Produk);
+        $products = $this->productModel->getAllProducts();
         require '../app/view/stock/update.php';
     }
 

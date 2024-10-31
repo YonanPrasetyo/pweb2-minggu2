@@ -52,7 +52,7 @@
         const deleteAlert = document.getElementById('deleteAlert');
         deleteAlert.classList.remove('hidden');
         const confirmDeleteBtn = document.getElementById('confirmDeleteBtn');
-        confirmDeleteBtn.setAttribute('href', '/stock/delete/' + $id);
+        confirmDeleteBtn.setAttribute('href', '/stock/hapus/' + $id);
     }
 
     // Fungsi untuk menutup alert konfirmasi hapus

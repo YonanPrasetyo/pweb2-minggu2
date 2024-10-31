@@ -3,7 +3,7 @@
 
 <div class="container p-10">
     <h1 class="text-2xl pb-6 font-bold">Tambah Stock Produk</h1>
-    <form action="/stock/tambah" method="POST" class="form-control w-full">
+    <form action="/stock/simpan" method="POST" class="form-control w-full">
         
         <label class="form-label w-full mt-4">
             <div class="label">

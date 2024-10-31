@@ -60,7 +60,9 @@ if ($url == '/kategori/index') {
 }elseif ($url == '/stock/index') {
     $controllerStock->stock();
 }elseif ($url == '/stock/tambah') {
-    $controllerStock->tambah($_POST);
+    $controllerStock->tambah();
+}elseif ($url == '/stock/simpan') {
+    $controllerStock->simpan($_POST);
 }elseif (preg_match('/\/stock\/edit\/(\d+)/', $url,$matches)) {
     $ID_Stock_Produk = $matches[1];
     $controllerStock->edit($ID_Stock_Produk);

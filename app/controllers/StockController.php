@@ -13,12 +13,14 @@ class StockController {
         require '../app/view/stock/index.php';
     }
 
-    public function tambah($data) {
-        if (isset($data['submit'])) {
-            $this->model->tambah($data['ID_Produk'], $data['Jumlah_Stock']);
-            header("Location: /stock/index");
-        }
+    public function tambah() {
         require '../app/view/stock/tambah.php';
+    }
+    
+    public function simpan($data){
+        $this->model->tambah($data['ID_Produk'], $data['Jumlah_Stock']);
+        header("Location: /stock/index");
+
     }
 
     public function edit($ID_Stock_Produk) {

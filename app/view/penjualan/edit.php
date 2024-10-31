@@ -15,12 +15,16 @@
     </label>
 
     <label for="ID_Produk" class="form-label w-full mt-4">
-        <div class="label">
-            <span class="label-text">ID Produk</span>
-        </div>
-        <input type="text" name="ID_Produk" value="<?= $penjualan['ID_Produk']; ?>" class="input input-bordered w-full">
+            <div class="label">
+                <span class="label-text" class="label-text">Nama Produk</span>
+            </div>
+            <select name="ID_Produk" class="input input-bordered w-full">
+                <option value="">Pilih Produk</option>
+                <?php foreach ($produk as $pilihan) : ?>
+                    <option <?php if ($pilihan['ID_Produk'] == $penjualan['ID_Produk']) echo "selected"; ?> value="<?= $pilihan['ID_Produk']; ?>"><?= $pilihan['Nama']; ?></option>
+                <?php endforeach; ?>
+            </select>
     </label>
-
 
     <button type="submit" class="btn btn-success mt-4">Simpan</button>
 </form>

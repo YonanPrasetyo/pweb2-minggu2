@@ -32,7 +32,11 @@
             <div class="label">
                 <span class="label-text" class="label-text">Kategori Produk</span>
             </div>
-            <input type="text" name="ID_Kategori" class="input input-bordered w-full">
+            <select name="ID_Kategori" class="input input-bordered w-full">
+                <?php foreach ($categories as $category) : ?>
+                    <option value="<?= $category['ID_Kategori']; ?>"><?= $category['Kategori_Produk']; ?></option>
+                <?php endforeach; ?>
+            </select>
         </label>
 
         <button type="submit" class="btn btn-success mt-4">Simpan</button>

@@ -37,5 +37,11 @@ class Product extends Database
         $query = $this->conn->query("DELETE FROM dataproduk WHERE ID_Produk = '$id'");
         return $query;
     }
+
+    public function getProductsByCategory($id)
+    {
+        $query = $this->conn->query("SELECT * FROM dataproduk WHERE ID_Kategori = '$id'");
+        return $query->fetchAll(PDO::FETCH_ASSOC);
+    }
 }
 ?>

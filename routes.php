@@ -1,6 +1,7 @@
 <?php
 // routes.php
 
+require_once 'app/controllers/HomeController.php';
 require_once 'app/controllers/KategoriController.php';
 require_once 'app/controllers/ProductController.php';
 require_once 'app/controllers/PenjualanController.php';
@@ -8,6 +9,7 @@ require_once 'app/controllers/StockController.php';
 
 $url = $_SERVER['REQUEST_URI'];
 
+$controllerHome = new HomeController();
 $controllerKategori = new KategoriController();
 $controllerProduct = new ProductController();
 $controllerPenjualan = new PenjualanController();
@@ -15,7 +17,9 @@ $controllerStock = new StockController();
 
 $url = $_SERVER['REQUEST_URI'];
 
-if ($url == '/kategori/index') {
+if ($url == '/') {
+    $controllerHome->index();
+}elseif ($url == '/kategori/index') {
     $controllerKategori->index();  
 }elseif ($url == '/kategori/create') {
     $controllerKategori->create();

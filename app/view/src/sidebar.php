@@ -8,6 +8,7 @@
             
             <!-- Navigation Items -->
             <ul class="menu">
+            <li><a href="/" class="flex items-center"><i class="fas fa-home mr-3"></i> Dashboard </a></li>
             <li><a href="/product/index" class="flex items-center"><i class="fas fa-home mr-3"></i> Product </a></li>
             <li><a href="/kategori/index" class="flex items-center"><i class="fas fa-user mr-3"></i> Kategori </a></li>
             <li><a href="/penjualan/index" class="flex items-center"><i class="fas fa-cog mr-3"></i> Penjualan </a></li>

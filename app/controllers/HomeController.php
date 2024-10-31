@@ -22,10 +22,12 @@ class HomeController {
         $products = $this->productModel->getAllProducts();
         $kategori = $this->kategoriModel->getAllCategories();
         $penjualan = $this->penjualanModel->getAllPenjualan();
+        $stock = $this->stockModel->readAll();
 
         $jumlahproduct = count($products);
         $jumlahkategori = count($kategori);
         $jumlahpenjualan = count($penjualan);
+        $jumlahstock = count($stock);
 
         require_once '../app/view/home/index.php';
     }

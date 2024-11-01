@@ -47,16 +47,16 @@ class PenjualanController{
     }
 
     public function edit($id){
-        $produk = $this->produkModel->getAllProducts();
         $penjualan = $this->penjualanModel->getPenjualanById($id);
+        $produk = $this->produkModel->getProductById($penjualan['ID_Produk']);
         require_once '../app/view/penjualan/edit.php';
     }
 
     public function update(){
         $jumlahBeliSebelum = $this->penjualanModel->getPenjualanById($_POST['ID_Penjualan'])['Jumlah'];
-        $selisihJumalh = $_POST['Jumlah'] - $jumlahBeliSebelum;
+        $selisihJumlah = $_POST['Jumlah'] - $jumlahBeliSebelum;
         $stock = $this->stockModel->getStockByProduct($_POST['ID_Produk']);
-        if ($selisihJumalh > $stock[0]['Jumlah_Stock']) {
+        if ($selisihJumlah > $stock[0]['Jumlah_Stock']) {
             $_SESSION['flash_message'] = [
                 'pesan' => "Jumlah yang diinputkan melebihi stock yang tersedia",
                 'color' => "Merah"
@@ -65,7 +65,7 @@ class PenjualanController{
             return;
         }else {
             $_POST['Total_Harga'] = $this->produkModel->getProductById($_POST['ID_Produk'])['Harga'] * $_POST['Jumlah'];
-            $stockSetelah = $stock[0]['Jumlah_Stock'] - $selisihJumalh;
+            $stockSetelah = $stock[0]['Jumlah_Stock'] - $selisihJumlah;
             $this->stockModel->penguranganStock($_POST['ID_Produk'], $stockSetelah);
             $this->penjualanModel->updatePenjualan();
             $_SESSION['flash_message'] = [

@@ -16,13 +16,10 @@
 
     <label for="ID_Produk" class="form-label w-full mt-4">
             <div class="label">
-                <span class="label-text" class="label-text">Nama Produk</span>
+                <span class="label-text" class="label-text">Nama Produk *anda tidak dapat mengubhanya</span>
             </div>
-            <select name="ID_Produk" class="input input-bordered w-full" disabled>
-                <option value="">Pilih Produk</option>
-                <?php foreach ($produk as $pilihan) : ?>
-                    <option <?php if ($pilihan['ID_Produk'] == $penjualan['ID_Produk']) echo "selected"; ?> value="<?= $pilihan['ID_Produk']; ?>"><?= $pilihan['Nama']; ?></option>
-                <?php endforeach; ?>
+            <select name="ID_Produk" class="input input-bordered w-full">
+                <option value="<?= $penjualan['ID_Produk']; ?>" selected><?= $produk['Nama'] ?></option>
             </select>
     </label>
 
@@ -30,7 +27,7 @@
         <div class="label">
             <span class="label-text">Masukan Jumlah Barang</span>
         </div>
-        <input type="text" name="Jumlah" value="<?= $penjualan['Jumlah']; ?>" class="input input-bordered w-full">
+        <input type="number" name="Jumlah" value="<?= $penjualan['Jumlah']; ?>" class="input input-bordered w-full">
     </label>
 
     <button type="submit" class="btn btn-success mt-4">Simpan</button>

@@ -1,6 +1,6 @@
 <?php
 
-class database {
+class Database {
     private $host = 'mdi.my.id';
     private $db_name = 'basdeat2_klp5';
     private $username = 'basdeat2_usr5';
